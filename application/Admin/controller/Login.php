@@ -1,11 +1,12 @@
 <?php
 namespace app\Admin\controller;
-use app\Admin;
+use think\Controller;
 
-class Index extends Common
+class Login extends Controller
 {
     public function index()
     {	
+        //return "Login";
         return $this->view->fetch();
     }
 }
