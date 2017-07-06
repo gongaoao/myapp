@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta content="" name="description" />
+    <meta content="webthemez" name="author" />
+    <title>MYDREAM后台</title>
+    <!-- Bootstrap Styles-->
+    <link href="__CSS__/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="__CSS__/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="__JS__/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="__CSS__/custom-styles.css" rel="stylesheet" />
+    <link href="__CSS__/select2.min.css" rel="stylesheet" >
+    <link href="__CSS__/checkbox3.min.css" rel="stylesheet" >
+        <!-- Custom Styles-->
+    <link href="__CSS__/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
+    <link rel="stylesheet" href="__JS__/Lightweight-Chart/cssCharts.css"> 
+</head>
+
+<body>
+    <div id="wrapper">
+        {include file="public/header" /}
+        {include file="public/menu" /}
+      
+		<div id="page-wrapper">
+            <div class="header"> 
+                        <h1 class="page-header">
+                            餐厅信息 <small>Welcome John Doe</small>
+                        </h1>
+                        <!-- <ol class="breadcrumb">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">Dashboard</a></li>
+                          <li class="active">Data</li>
+                        </ol>  -->
+            </div>
+            <div id="page-inner"> 
+                       <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="card-title">
+                                        <div class="title">提示：</div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    商户信息填写完毕，提交后，待审核通过，通过后才可以使用平台。
+                                    <div class="sub-title">店名</div>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Text input">
+                                    </div>
+                                    <div class="sub-title">联系电话</div>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Text input">
+                                    </div>
+                                    <div class="sub-title">简介</div>
+                                    <div>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="sub-title">上传LOGO</div>
+                                    <div class="form-group">
+                                            <input type="file" id="exampleInputFile">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+                                    <div class="sub-title">Checkboxes and radios </div>
+                                    <div>
+                                        <div class="checkbox3 checkbox-round">
+                                          <input type="checkbox" id="checkbox-2">
+                                          <label for="checkbox-2">
+                                            Option one is this and that&mdash;be sure to include why it's great
+                                          </label>
+                                        </div>
+                                        <div class="checkbox3 checkbox-round">
+                                          <input type="checkbox" id="checkbox-3" disabled="">
+                                          <label for="checkbox-3">
+                                            Option two is disabled
+                                          </label>
+                                        </div>
+                                        <div class="radio3">
+                                          <input type="radio" id="radio1" name="radio1" value="option1">
+                                          <label for="radio1">
+                                            Option one is this and that&mdash;be sure to include why it's great
+                                          </label>
+                                        </div>
+                                        <div class="radio3">
+                                          <input type="radio" id="radio2" name="radio1" value="option2">
+                                          <label for="radio2">
+                                            Option two can be something else and selecting it will deselect option one
+                                          </label>
+                                        </div>
+                                        <div class="sub-title">Inline</div>
+                                        <div>
+                                          <div class="checkbox3 checkbox-inline checkbox-check checkbox-light">
+                                            <input type="checkbox" id="checkbox-fa-light-1" checked="">
+                                            <label for="checkbox-fa-light-1">
+                                              Option1
+                                            </label>
+                                          </div>
+                                          <div class="checkbox3 checkbox-success checkbox-inline checkbox-check checkbox-round  checkbox-light">
+                                            <input type="checkbox" id="checkbox-fa-light-2" checked="">
+                                            <label for="checkbox-fa-light-2">
+                                              Option Round
+                                            </label>
+                                          </div>
+                                          <div class="checkbox3 checkbox-danger checkbox-inline checkbox-check  checkbox-circle checkbox-light">
+                                            <input type="checkbox" id="checkbox-fa-light-3" checked="">
+                                            <label for="checkbox-fa-light-3">
+                                              Option Circle
+                                            </label>
+                                          </div>
+                                        </div>
+                                        <div>
+                                          <div class="radio3 radio-check radio-inline">
+                                            <input type="radio" id="radio4" name="radio2" value="option1" checked="">
+                                            <label for="radio4">
+                                              Option 1
+                                            </label>
+                                          </div>
+                                          <div class="radio3 radio-check radio-success radio-inline">
+                                            <input type="radio" id="radio5" name="radio2" value="option2">
+                                            <label for="radio5">
+                                              Option 2
+                                            </label>
+                                          </div>
+                                          <div class="radio3 radio-check radio-warning radio-inline">
+                                            <input type="radio" id="radio6" name="radio2" value="option3">
+                                            <label for="radio6">
+                                              Option 3
+                                            </label>
+                                          </div>
+                                        </div>
+                                    </div> 
+                                    <div>
+                                        <input type="checkbox" class="toggle-checkbox" name="my-checkbox" checked>
+                                    </div>
+                                    <div class="sub-title">Select</div>
+                                    <div>
+                                        <select class="selectbox">
+                                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                <option value="AK">Alaska</option>
+                                                <option value="HI">Hawaii</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {include file="public/footer" /}
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="__JS__/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="__JS__/bootstrap.min.js"></script>
+     
+    <!-- Metis Menu Js -->
+    <script src="__JS__/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    
+    <!-- Custom Js -->
+    <script src="__JS__/custom-scripts.js"></script>
+
+      
+    <!-- Chart Js -->
+    <script type="text/javascript" src="__JS__/Chart.min.js"></script>  
+    <script type="text/javascript" src="__JS__/chartjs.js"></script> 
+
+    <script src="__JS__/select2.full.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $(".selectbox").select2();
+    });
+    </script>
+      <!-- Custom Js -->
+    <script src="__JS__/custom-scripts.js"></script> 
+    
+</body>
+
+</html>

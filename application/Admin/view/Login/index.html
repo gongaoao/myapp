@@ -1,62 +1,113 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta content="" name="description" />
-    <meta content="webthemez" name="author" />
-    <title>登录页面</title>
-    <!-- FontAwesome Styles-->
-    <link href="__CSS__/font-awesome.css" rel="stylesheet" />
-    <link href="__CSS__/bootstrap.css" rel="stylesheet" />
-    <!-- FontAwesome Styles-->
+    <title>用户登录! | </title>
 
-<body>
-    <div class="container">
-        <form class="form-signin" role="form">
-            <h2 class="form-signin-heading">欢迎登录</h2>
-            <div class="form-control"><i class="fa fa-user"></i><input type="text"  placeholder="用户名" required autofocus></div>
-            <div class="form-control"><i class="fa fa-lock"></i><input type="password"  placeholder="密码" required></div>
-            <input type="text" class="form-control" placeholder="验证码" required="">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-        </form>
+    <!-- Bootstrap -->
+    <link href="__CSS__/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="__CSS__/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="__CSS__/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="__CSS__/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="__CSS__/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form role="form" action="/admin/Login/login" method="post">
+              <h1>用户登录</h1>
+              <div>
+                <input name="username" type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input name="password" type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div style="display: flex">
+                <input name="verifycode" type="text" class="form-control" placeholder="验证码" class="captcha" name="verifycode" required style="width: 50%"><div style="width: 20%"></div><img src="{:captcha_src()}"  id="captcha_img" alt="验证码" onclick="refreshVerify()" style="width: 30%;height: 34px">
+              </div>
+              <div>
+                <button class="btn btn-default submit" type="submit">登 录</button>
+                <a class="reset_pass" href="#">忘记密码?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">新用户?
+                  <a href="#signup" class="to_register">  注册账号 </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form role="form" action="/admin/Login/register" method="post">
+              <h1>注册账号</h1>
+              <div>
+                <input name="username" type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input name="phonenum" type="text" class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input name="password" type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="index.html">提交</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">已有账号 ?
+                  <a href="#signin" class="to_register"> 登录 </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
     </div>
-    <!-- jQuery Js -->
-    <script src="__JS__/jquery-1.10.2.js"></script>
-    <!-- Bootstrap Js -->
-    <script src="__JS__/bootstrap.min.js"></script>
-	<style type="text/css">
-      .form-signin{
-        max-width: 300px;
-        padding: 15px;
-        margin: 0 auto;
-      }  
-      .form-control input{
-        margin-left: 3px;
-      } 
-      input{
-        margin-bottom: 3px;
-        border: 0;
-      }
-      .signin-label{
-        display: flex;
-      }
-      body{
-        background-color: #F36A5A; 
-      }
-      html,body{
-        height:100%;
-      }
-      form{
-        background-color: #FFFFFF;
-      }
-      body{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
-</body>
-
+  </body>
 </html>
+<script src="__JS__/jquery-1.10.2.js"></script> 
+<script type="text/javascript">
+  function refreshVerify(){
+    var ts =Date.parse(new Date())/1000;
+    $('#captcha_img').attr('src','/captcha?id='+ts);
+  }
+</script>

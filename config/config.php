@@ -203,7 +203,7 @@ return [
         // SESSION_ID的提交变量,解决flash上传跨域
         'var_session_id' => '',
         // SESSION 前缀
-        'prefix'         => 'think',
+        'prefix'         => 'ga',
         // 驱动方式 支持redis memcache memcached
         'type'           => '',
         // 是否自动开启 SESSION
@@ -235,5 +235,16 @@ return [
         'type'      => 'bootstrap',
         'var_page'  => 'page',
         'list_rows' => 15,
+    ],
+
+    //验证码配置
+    'captcha'  => [
+        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', 
+        'fontSize' => 18, 
+        'useCurve' => true,
+        'imageH'   => 34,
+        'imageW'   => 147,
+        'length'   => 4,
+        'reset'    => true
     ],
 ];
